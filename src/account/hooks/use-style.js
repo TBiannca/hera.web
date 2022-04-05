@@ -1,32 +1,13 @@
-import {makeStyles} from '@material-ui/core'
+import { useMediaQuery, useTheme } from '@material-ui/core'
+import { useDesktopStyle } from './use-desktop-style'
+import { useMobileStyle } from './use-mobile-style'
 
-export const useStyle = makeStyles({
-    root: {
-        width: '65vw',
-        height: '63vh',
-        background: '#B9C5EE',
-        margin: 'auto',
-        marginTop: '16vh',
-        borderRadius: 20,
-    },
-    image: {
-        objectFit: 'cover',
-        width: '100%',
-        height: '597px',
-    },
-    input: {
-        appearance: 'none',
-        background: '#f2f2f2',
-        padding: 12,
-        width: 400,
-        borderRadius: 20,
-        marginBottom: 30,
-    },
-    button: {
-        borderRadius: '20px',
-        backgroundColor: '#433A7B',
-        color: '#FFFFFF',
-        padding: '12px 45px',
-        transition: 'transform 80ms ease-in'
+export const useStyle = () => {
+    const theme = useTheme()
+    const isDesktop = useMediaQuery(theme.breakpoints.up('md'))
+
+    const desktopStyle = useDesktopStyle()
+    const mobileStyle = useMobileStyle()
+
+    return isDesktop ? desktopStyle : mobileStyle
 }
-})
