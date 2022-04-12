@@ -8,7 +8,7 @@ import { Image } from './image'
 export const Register = () => {
   const isDesktopResolution = useMediaQuery(useTheme().breakpoints.up('md'))
 
-  return <Grid container classes={useStyle()} justify={'center'}>
+  return <Grid container classes={useStyle()} justifyContent={'center'}>
     { isDesktopResolution && <Image/> }
     <Grid item md={6} lg={6}>
       <Typography align={'center'} className={useStyle().title}>Bine ai venit!</Typography>

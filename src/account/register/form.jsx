@@ -16,13 +16,13 @@ const useOnSubmit = () => {
 export const RegisterForm = () => <Grid container justifyContent={'center'} style={{marginTop: '80px'}}>
   <Formik initialValues={{}} onSubmit={useOnSubmit()}>
     <Form>
-      <Grid md={12} lg={12}>
+      <Grid>
         <Field type="text" name="userName" placeholder={'nume'} className={useStyle().input}/>
       </Grid>
-      <Grid md={12} lg={12}>
+      <Grid>
         <Field type="password" name="password" placeholder={'parola'} className={useStyle().input}/>
       </Grid>
-      <Grid container md={12} lg={12} justifyContent={'center'}>
+      <Grid container justifyContent={'center'}>
         <button type="submit" className={useStyle().button}>Creeaza cont</button>
       </Grid>
     </Form>
