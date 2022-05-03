@@ -14,6 +14,8 @@ const failure = (state, { payload }) => ({ ...state, errors: payload })
 
 const reset = () => initialState
 
+const refresh = state => ({...state})
+
 export const loginSlice = createSlice({
     initialState,
     name: 'login',
@@ -21,7 +23,8 @@ export const loginSlice = createSlice({
         attempt,
         success,
         failure,
-        reset
+        reset,
+        refresh,
     },
 })
 
