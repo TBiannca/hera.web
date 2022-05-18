@@ -2,7 +2,7 @@ import * as faceapi from 'face-api.js'
 
 export const loadLabeledDescriptors = async values => {
     const descriptions = []
-    console.log('values', values)
+    const label = values.lastName.concat(' ', values.firstName)
     
     for (let i = 0; i< values.photos.length; i++)
     {
@@ -13,5 +13,5 @@ export const loadLabeledDescriptors = async values => {
         descriptions.push(descriptors.descriptor)
     }
     
-    return new faceapi.LabeledFaceDescriptors(values.label, descriptions)
+    return new faceapi.LabeledFaceDescriptors(label, descriptions)
 }
