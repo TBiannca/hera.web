@@ -4,7 +4,7 @@ import image from '../../account/images/background.jpg'
 export const useStyle = makeStyles(() => ({
     root: {
         width: '55vw',
-        height: '99vh',
+        height: '100vh',
         background: 'white',
         margin: 'auto',
         justifyContent: 'center',
@@ -13,7 +13,7 @@ export const useStyle = makeStyles(() => ({
         backgroundImage: `url(${image})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        height:'98vh',
+        height:'100vh',
     },
     column: {
         justifyContent:'center', 
