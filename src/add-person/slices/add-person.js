@@ -10,7 +10,10 @@ const attempt = (state, { payload }) => ({ ...state, attempt: payload })
 
 const success = (state, { payload }) => ({ ...state, data: payload })
 
-const failure = (state, { payload }) => ({ ...state, errors: payload })
+const failure = (state, { payload }) => {
+    console.log('fail slice', payload)
+    return ({...state, errors: payload})
+}
 
 export const addPersonSlice = createSlice({
     initialState,

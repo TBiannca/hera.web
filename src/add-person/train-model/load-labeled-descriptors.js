@@ -13,5 +13,14 @@ export const loadLabeledDescriptors = async values => {
         descriptions.push(descriptors.descriptor)
     }
     
-    return new faceapi.LabeledFaceDescriptors(label, descriptions)
+    const descriptors = new faceapi.LabeledFaceDescriptors(label, descriptions)
+    
+    const person =  {
+        name: label,
+        role: values.role,
+        descriptors: ''
+    }
+    console.log(person)
+    
+    return person
 }
