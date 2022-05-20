@@ -13,14 +13,16 @@ export const loadLabeledDescriptors = async values => {
         descriptions.push(descriptors.descriptor)
     }
     
-    const descriptors = new faceapi.LabeledFaceDescriptors(label, descriptions)
+    const person = new faceapi.LabeledFaceDescriptors(label, descriptions)
+    const descriptors = JSON.stringify(person.descriptors)
+    const encodedDescriptors = btoa(descriptors)
     
-    const person =  {
+    const personInfo =  {
         name: label,
         role: values.role,
-        descriptors: ''
+        descriptors: encodedDescriptors
     }
-    console.log(person)
+    console.log(personInfo)
     
-    return person
+    return personInfo
 }
