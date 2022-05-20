@@ -5,6 +5,7 @@ import { trainModel } from '../add-person/train-model'
 import {PersonForm} from './person-form'
 import {useStyle} from './hooks/use-style'
 import {useDispatch} from 'react-redux'
+import {PersonsRedirect} from './persons-redirect'
 
 const initialValues = {
     firstName: null,
@@ -30,6 +31,7 @@ export const AddPerson = () => {
                 </Formik>
                 <img src="" id="img" alt="ceva" hidden/>
             </Grid>
+            <PersonsRedirect />
         </Grid>
     </Box>
 }

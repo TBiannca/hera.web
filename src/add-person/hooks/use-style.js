@@ -19,5 +19,6 @@ export const useStyle = makeStyles(() => ({
         justifyContent:'center', 
         alignItems: 'center',
         flexDirection: 'column',
+        marginTop: 150,
     }
 }))
