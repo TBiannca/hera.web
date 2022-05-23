@@ -1,4 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit'
 import { getPersonsSlice } from './get-persons'
+import { deletePersonSlice } from './delete-person'
 
-export const getPersons = combineReducers({ get: getPersonsSlice.reducer })
+export const persons = combineReducers({ 
+    get: getPersonsSlice.reducer,
+    delete: deletePersonSlice.reducer
+})
