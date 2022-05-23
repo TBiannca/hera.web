@@ -20,5 +20,10 @@ export const useStyle = makeStyles(() => ({
         alignItems: 'center',
         flexDirection: 'column',
         marginTop: 150,
+    },
+    scroll: {
+        height: 800,
+        width: '49vw',
+        overflowX: 'scroll',
     }
 }))
