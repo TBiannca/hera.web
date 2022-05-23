@@ -1,24 +1,6 @@
-import {makeStyles, TableBody, TableCell, TableRow} from '@material-ui/core'
-
-let rows
-rows = [
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-    { name: 'Topircean Bianca', role: 'Admin', action: 'delete' },
-]
+import { makeStyles, TableBody, TableCell, TableRow } from '@material-ui/core'
+import { useSelector } from 'react-redux'
+import { get } from 'lodash'
 
 const useStyles = makeStyles({
 
@@ -31,13 +13,14 @@ const useStyles = makeStyles({
 
 export const Content = () => {
     const classes = useStyles()
+    const persons = useSelector(state => get(state, 'getPersons.get.data.data.persons', []))
     
     return <TableBody>
-        {rows.map((row) => (
+        {persons.map((row) => (
             <TableRow className={classes.root}>
                 <TableCell align="center">{row.name}</TableCell>
                 <TableCell align="center">{row.role}</TableCell>
-                <TableCell align="center">{row.action}</TableCell>
+                <TableCell align="center">delete</TableCell>
             </TableRow>
         ))}
     </TableBody>
