@@ -22,7 +22,7 @@ export const useStyle = makeStyles(() => ({
         marginTop: 150,
     },
     scroll: {
-        height: 800,
+        height: 700,
         width: '49vw',
         overflowX: 'scroll',
     }

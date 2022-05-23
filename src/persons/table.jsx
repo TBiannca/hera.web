@@ -4,7 +4,7 @@ import { Content } from './content'
 import {useStyle} from '../add-person/hooks/use-style'
 
 export const PersonsTable = () => <Grid className={useStyle().scroll}>
-    <Table stickyHeader headeColor={'red'}>
+    <Table stickyHeader>
         <Header />
         <Content />
     </Table>
