@@ -6,6 +6,7 @@ import {PersonForm} from './person-form'
 import {useStyle} from './hooks/use-style'
 import {useDispatch} from 'react-redux'
 import {PersonsRedirect} from './persons-redirect'
+import {useHistory} from 'react-router-dom'
 
 const initialValues = {
     firstName: null,
@@ -16,13 +17,14 @@ const initialValues = {
 
 export const AddPerson = () => {
     const dispatch = useDispatch()
+    const history = useHistory()
     
     return <Box className={useStyle().background}>
         <Grid container className={useStyle().root}>
             <Grid container className={useStyle().column}>
                 <Typography variant={'h4'} style={{marginBottom: 80, marginTop: '-16vh'}}>Adaugă o persoană în
                     sistem</Typography>
-                <Formik initialValues={initialValues} onSubmit={values => trainModel(values, dispatch)}>
+                <Formik initialValues={initialValues} onSubmit={values => trainModel(values, dispatch, history)}>
                     {(formik) => {
                         return (
                             <PersonForm {...formik} />
