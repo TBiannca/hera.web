@@ -20,7 +20,7 @@ export const AddPerson = ({ user= true }) => {
     const history = useHistory()
     const classes = useStyle()
     
-    return user ? <Box className={classes.background}>
+    return <Box className={classes.background}>
         <Grid container className={classes.root}>
             <Grid container className={classes.column}>
                 <Typography variant={'h4'} style={{marginBottom: 80, marginTop: '-16vh'}}>Adaugă o persoană în
@@ -36,5 +36,5 @@ export const AddPerson = ({ user= true }) => {
             </Grid>
             <PersonsRedirect />
         </Grid>
-    </Box> : <Redirect to={'/login'} />
+    </Box>
 }

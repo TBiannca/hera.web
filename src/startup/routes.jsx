@@ -14,9 +14,11 @@ export const routes = [{
   {
     path: '/adauga',
     Component: AddPerson,
+    authorized: true,
   },
   {
     path: '/persoane',
     Component: Persons,
+    authorized: true,
   }
 ]

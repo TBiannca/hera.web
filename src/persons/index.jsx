@@ -8,7 +8,7 @@ import {Redirect} from 'react-router-dom'
 export const Persons = ({user= true}) => {
     const classes = useStyle()
     
-    return user ? <Box className={classes.background}>
+    return <Box className={classes.background}>
         <Behaviour/>
         <Grid container className={classes.root}>
             <Grid container className={classes.column}>
@@ -18,5 +18,5 @@ export const Persons = ({user= true}) => {
                 <PersonsTable/>
             </Grid>
         </Grid>
-    </Box> : <Redirect to={'/login'} />
+    </Box> 
 }
