@@ -24,6 +24,6 @@ const handleResponse = response => {
 }
 
 const storeTokens = tokens => {
-    localStorage.setItem('ACCESS_TOKEN', JSON.stringify(tokens.accessToken))
-    localStorage.setItem('REFRESH_TOKEN', JSON.stringify(tokens.refreshToken))
+    localStorage.setItem('ACCESS_TOKEN', tokens.accessToken)
+    localStorage.setItem('REFRESH_TOKEN', tokens.refreshToken)
 }

@@ -4,12 +4,15 @@ import { Grid } from '@material-ui/core'
 import { useStyle } from '../hooks/use-style'
 import { useDispatch } from 'react-redux'
 import { actions } from '../slices/register'
+import { useHistory } from 'react-router-dom'
 
 const useOnSubmit = () => {
   const dispatch = useDispatch()
-
+  const history = useHistory()
+  
   return useCallback(values => {
     dispatch(actions.attempt(values))
+    history.push('/login')
   }, [])
 }
 

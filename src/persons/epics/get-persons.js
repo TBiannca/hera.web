@@ -7,9 +7,13 @@ export const get = actions$ => actions$
     .pipe(ofType(actions.attempt))
     .pipe(mergeMap(execute))
 
-const execute = () => repository.getPersons()
-    .pipe(mergeMap(success))
-    .pipe(catchError(failure))
+const execute = ({ payload }) => {
+    console.log('AAAAAAAAAAAAAAAAA', payload)
+    
+    return repository.getPersons(payload)
+        .pipe(mergeMap(success))
+        .pipe(catchError(failure))
+}
 
 const success = payload => of(actions.success(payload))
 
