@@ -7,7 +7,6 @@ export const login = user => {
 
     return fetch(`http://localhost:5172/auth/login`, requestOptions)
         .then(handleResponse)
-        .then(storeTokens)
 }
 
 const handleResponse = response => {
@@ -19,11 +18,8 @@ const handleResponse = response => {
             return Promise.reject(error)
         }
 
+        localStorage.setItem('ACCESS_TOKEN', data.accessToken)
+        localStorage.setItem('REFRESH_TOKEN', data.refreshToken)
         return data
     })
-}
-
-const storeTokens = tokens => {
-    localStorage.setItem('ACCESS_TOKEN', tokens.accessToken)
-    localStorage.setItem('REFRESH_TOKEN', tokens.refreshToken)
 }

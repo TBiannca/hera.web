@@ -6,7 +6,7 @@ import { repository } from '../repository'
 import { actions } from '../slices/login'
 
 export const login = actions$ => actions$
-    .pipe(ofType(actions.attempt))
+    .pipe(ofType(actions.attempt.type))
     .pipe(mergeMap(execute))
 
 const execute = ({ payload }) => from(repository.login(payload))

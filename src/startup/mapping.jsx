@@ -3,7 +3,8 @@ import { Route } from 'react-router-dom'
 import { routes } from './routes'
 
 export const Mapping = () => {
-    const actualRoutes = routes.filter(route => !!route.authorized === false)
+    const logged = localStorage.getItem('ACCESS_TOKEN')
+    const actualRoutes = routes.filter(route => !!route.authorized === !!logged)
     
     return <>
         {
