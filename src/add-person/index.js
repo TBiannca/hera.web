@@ -6,7 +6,7 @@ import {PersonForm} from './person-form'
 import {useStyle} from './hooks/use-style'
 import {useDispatch} from 'react-redux'
 import {PersonsRedirect} from './persons-redirect'
-import {Redirect, useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const initialValues = {
     firstName: null,
